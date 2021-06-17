@@ -13,14 +13,14 @@ Form.addEventListener('submit',(e)=>{
     message1.textContent='Loading....';
     message2.textContent='';
 
-    fetch('http://localhost:8000/weather?address='+loc).then((response) => {
+    fetch('/weather?address='+loc).then((response) => {
     response.json().then((data) => {
         if (data.error) {
            message1.textContent=(data.error);
            message2.textContent='';
         }
         else {
-            message1.textContent=(data.location);
+            message1.textContent=(data.location)
             message2.textContent=(data.forecast);
         }
     })

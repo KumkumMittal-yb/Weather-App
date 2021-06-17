@@ -6,6 +6,8 @@ const geocode= require('./utils/geocode');
 const forecast= require('./utils/forecast');
 const { query } = require('express');
 
+const port= process.env.PORT || 8000;
+
 // console.log(__dirname);
 // console.log(path.join(__dirname,'../public'));
 
@@ -99,6 +101,6 @@ app.get('*',(req,res)=>{
         ErrorMessage:'Page not found'
     })
 })
-app.listen(8000, () => {
-    console.log('Server is up on port 8000');
+app.listen(port, () => {
+    console.log('Server is up on port'+ port);
 })
